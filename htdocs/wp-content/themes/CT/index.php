@@ -43,8 +43,6 @@
                                     <a href=" <?php the_permalink(); ?>">
                                     <p><?php echo get_the_excerpt(); ?></p>
                                     </a>
-                                <?php } else { ?>
-                                    <p><?php the_content(); ?></p>
                                 <?php } ?>
                         </div> 
                     <hr>
