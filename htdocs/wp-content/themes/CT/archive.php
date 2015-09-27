@@ -83,8 +83,16 @@
                     </ul>   -->
                 </div>
                  <!-- Side bar-->
+                <!-- Side bar-->
                 <div class="col-lg-3 col-md-3">
                     <div class="sidebar" style=" word-wrap: break-word;border-left: 1px grey solid; padding-left: 10px; margin-top: 30px;">
+                        <!-- Shop -->
+                        <h4>Shop: </h4>
+                        <a href="http://classicaltrax.bigcartel.com/">
+                            <img class="sidebarElement" alt="ClassicalTrax-Bigcartel" src="<?php echo bloginfo('template_directory')?>/img/CT-shop.gif">
+                        </a>
+                        <hr>
+                        
                         <!-- Latest releases -->
                         <?php
                         
@@ -114,7 +122,7 @@
                         if (count($latestReleases) != 0) {
                             
                             // Posts available
-                            echo '<h4>Latest Releases:</h4>';
+                            echo '<h4 class="sidebarElement"> Latest Releases:</h4>';
 
                             // Iterate through array of links
                             foreach ($latestReleases as $post) { ?>
@@ -135,7 +143,7 @@
                         
                         ?>
                             
-                        <h4 style="padding-top:20px;">Latest Mix:</h4>
+                        <h4 class="sidebarElement">Latest Mix:</h4>
                         <iframe width="100%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/223973703&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
                         <hr>
                          <!-- Latest Feature -->
@@ -167,7 +175,7 @@
                         if (count($latestFeatures) != 0) {
                             
                             // Posts available
-                            echo '<h4 style="padding-top:20px;">Latest Feature:</h4>';
+                            echo '<h4 class="sidebarElement">Latest Feature:</h4>';
 
                             // Iterate through array of links
                             foreach ($latestFeatures as $post) { ?>
@@ -194,10 +202,10 @@
 
                         } ?>
 
-                        <h4 style="padding-top:20px;">Feed:</h4>
+                        <h4 class="sidebarElement">Feed:</h4>
                         <a class="twitter-timeline" href="https://twitter.com/classical_trax" data-widget-id="638798685892120576">Tweets by @classical_trax</a>
                         <hr>
-                        <h4 style="padding-top:20px;">Facebook</h4>
+                        <h4 class="sidebarElement">Facebook</h4>
                         <div class="fb-page" data-href="https://www.facebook.com/classicaltrax?fref=ts" data-tabs="timeline" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/classicaltrax?fref=ts"><a href="https://www.facebook.com/classicaltrax?fref=ts">Classical Trax</a></blockquote></div></div>
                         
                     </div>

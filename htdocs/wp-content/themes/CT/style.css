@@ -175,3 +175,6 @@ ul.releasesList li:hover span.releaseTitle {
   opacity: 1;
 }
 
+.sidebarElement{
+    padding-top: 20px;
+}
