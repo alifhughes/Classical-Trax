@@ -36,7 +36,7 @@
                                 <!-- ADD SUBTITLE TEXT HERE -->
                                 <!-- </h3> -->
                                 <a href=" <?php the_permalink(); ?>">
-                                <?php the_post_thumbnail('medium-thumb'); ?>
+                                <?php the_post_thumbnail('large-thumb'); ?>
                                 </a>
 
                                 <?php if($post->post_excerpt) { ?>
