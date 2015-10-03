@@ -31,12 +31,12 @@
                                     <?php the_title();?>
                                 </h2>
                             </a>  
-                                <p class="post-meta">Posted by <a href=" <?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"> <?php echo the_author(); ?> </a>on <?php echo the_time('jS F, Y');?></p> 
+                                <p class="post-meta">Posted by <a href=" <?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"> <?php the_author(); ?> </a>on <?php echo the_time('jS F, Y');?></p> 
                                 <!-- <h3 class="post-subtitle"> -->
                                 <!-- ADD SUBTITLE TEXT HERE -->
                                 <!-- </h3> -->
                                 <a href=" <?php the_permalink(); ?>">
-                                <?php the_post_thumbnail('banner-image'); ?>
+                                <?php the_post_thumbnail('medium-thumb'); ?>
                                 </a>
 
                                 <?php if($post->post_excerpt) { ?>
@@ -72,7 +72,7 @@
                         <!-- Shop -->
                         <h4>Shop: </h4>
                         <a href="http://classicaltrax.bigcartel.com/">
-                            <img class="sidebarElement" alt="ClassicalTrax-Bigcartel" src="<?php echo bloginfo('template_directory')?>/img/CT-shop.gif">
+                            <img class="sidebarElement" target="_blank" alt="ClassicalTrax-Bigcartel" src="<?php bloginfo('template_directory')?>/img/CT-shop.jpg">
                         </a>
                         <hr>
                         

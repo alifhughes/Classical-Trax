@@ -1,4 +1,3 @@
-
 <?php get_header(); ?>
     <!-- Main Content -->
     <article>
@@ -70,7 +69,7 @@
             else:
                 // No posts found 
 
-                echo '<p class="post-subtitle">No content found. </p>';
+                echo '<p style="text-align: center;" class="post-subtitle">Watch this space. </p>';
 
             endif;
 

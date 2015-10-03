@@ -20,7 +20,7 @@ add_theme_support('post-thumbnails');
 add_image_size('large-thumb', 1060, 650);
 add_image_size('medium-thumb', 800, 490);
 add_image_size('small-thumb', 400, 245);
-add_image_size('banner-image', 920, 250, array('left', 'top'));
+add_image_size('banner-image', 550, 375);
 
 add_action('wp_enqueue_scripts', 'ClassicalTraxResources');
 
