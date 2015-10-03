@@ -11,7 +11,7 @@ echo ""
 
 # rsync to live server
 
-rsync -e "ssh -p 18765" --progress --stats --exclude wp-config.php --exclude nbproject --archive -z --compress --delete -t /Users/user/Documents/Coding/www/Classical-Trax/htdocs/ class690@classicaltrax.org:public_html
+rsync -e "ssh -p 18765" --progress --stats --exclude wp-config.php —-exclude .htaccess exclude nbproject --archive -z --compress --delete -t /Users/user/Documents/Coding/www/Classical-Trax/htdocs/ class690@classicaltrax.org:public_html
 
 echo ""
 echo "Done, safe."

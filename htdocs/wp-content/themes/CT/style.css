@@ -178,3 +178,7 @@ ul.releasesList li:hover span.releaseTitle {
 .sidebarElement{
     padding-top: 20px;
 }
+
+.titleCentred{
+    text-align: center;
+}
