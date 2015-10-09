@@ -60,11 +60,17 @@
 
                 ?>
                     <!-- Pager -->
-<!--                     <ul class="pager">
+                    <ul class="pager">
                         <li class="next">
-                            <a href="<?php echo get_page_link(9); ?>">Older Posts &rarr;</a>
+                            <?php next_posts_link(); ?>
                         </li>
-                    </ul> -->
+                    </ul> 
+                    <!-- Pager -->
+                    <ul class="pager">
+                        <li class="previous">
+                            <?php previous_posts_link(); ?>
+                        </li>
+                    </ul> 
                 </div>
                 <!-- Side bar-->
                 <div class="col-lg-3 col-md-3">
@@ -112,9 +118,16 @@
 
                                <a href=" <?php the_permalink(); ?> ">
                             
-                            <?php
+                            <!-- Check if has featured image, if not displays title, as to not leave it blank -->
+                            <?php if (has_post_thumbnail()) { ?>
 
-                                the_post_thumbnail('small-thumb');
+                                <?php the_post_thumbnail('small-thumb'); ?>
+
+                            <?php } else { ?>
+
+                                <h5 class="sidebarBox"><?php the_title();?></h5>
+
+                            <?php } 
 
                                 echo '</a>';
 
@@ -172,7 +185,7 @@
 
                             <?php } else { ?>
 
-                                <h5 style="text-align: center;border: 1px grey solid;padding: 20px;"><?php the_title();?></h5>
+                                <h5 class="sidebarBox"><?php the_title();?></h5>
 
                             <?php } ?>
 
