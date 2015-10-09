@@ -60,12 +60,15 @@
                 endif;
 
                 ?>
-                    <!-- Pager -->
-<!--                     <ul class="pager">
+                 <!-- Pager -->
+                    <ul class="pager">
                         <li class="next">
-                            <a href="<?php query_posts ?>">Other Posts &rarr;</a>
+                            <?php next_posts_link(); ?>
                         </li>
-                    </ul>   -->
+                        <li class="previous">
+                            <?php previous_posts_link(); ?>
+                        </li>
+                    </ul> 
                 </div>
                         
                 <!-- Side bar-->
