@@ -88,7 +88,7 @@
                     <div class="sidebar" style=" word-wrap: break-word;border-left: 1px grey solid; padding-left: 10px; margin-top: 30px;">
                         <!-- Shop -->
                         <h4>Shop: </h4>
-                        <a href="http://classicaltrax.bigcartel.com/">
+                        <a target="_blank" href="http://classicaltrax.bigcartel.com/">
                             <img class="sidebarElement" alt="ClassicalTrax-Bigcartel" src="<?php bloginfo('template_directory')?>/img/CT-shop.jpg">
                         </a>
                         <hr>

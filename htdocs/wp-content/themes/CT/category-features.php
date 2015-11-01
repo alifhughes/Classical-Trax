@@ -15,6 +15,15 @@
 
                         $linksCategoryId         = get_cat_ID('Links');
 
+                        // Inistialise page number
+                        $pageNo = $paged;
+
+                        // Check if page number has been set
+                        if ($pageNo == '') { $pageNo = 1; }
+
+                        // Query the posts
+                        query_posts('showposts=5&paged='.$pageNo); 
+                        
                         // Check if posts
                         if (have_posts()) :
                             // Posts available
@@ -37,11 +46,11 @@
                                 <!-- </h3> -->
                                 
                                 <a href=" <?php the_permalink(); ?>">
-                                <?php the_post_thumbnail('large-thumb'); ?>
+                                <?php the_post_thumbnail('large-thumb', array('class' => 'bannerImage')); ?>
                                 </a>
                                 <?php if($post->post_excerpt) { ?>
                                     <a href=" <?php the_permalink(); ?>">
-                                    <p><?php echo get_the_excerpt(); ?></p>
+                                    <p class="postExcerpt"><?php echo get_the_excerpt(); ?></p>
                                     </a>
                                 <?php } ?>
                             
@@ -72,12 +81,11 @@
                 </div>
                         
                 <!-- Side bar-->
-                <!-- Side bar-->
                 <div class="col-lg-3 col-md-3">
-                    <div class="sidebar" style=" word-wrap: break-word;border-left: 1px grey solid; padding-left: 10px; margin-top: 30px;">
+                    <div class="sidebar">
                         <!-- Shop -->
                         <h4>Shop: </h4>
-                        <a href="http://classicaltrax.bigcartel.com/">
+                        <a target="_blank" href="http://classicaltrax.bigcartel.com/">
                             <img class="sidebarElement" alt="ClassicalTrax-Bigcartel" src="<?php bloginfo('template_directory')?>/img/CT-shop.jpg">
                         </a>
                         <hr>

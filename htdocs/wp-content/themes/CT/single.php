@@ -7,7 +7,7 @@
                     <?php 
                         
                         $categoryId = get_cat_ID('Links');
-
+                        
                         // Check if posts
                         if (have_posts()) :
                             // Posts available
@@ -36,7 +36,7 @@
                                 <!-- ADD SUBTITLE TEXT HERE -->
                                 <!-- </h3> -->
                                 
-                                <?php the_post_thumbnail('large-thumb'); ?>
+                                <?php the_post_thumbnail('large-thumb', array('class' => 'bannerImage')); ?>
   
                                 <p><?php the_content(); ?></p>
                                 
@@ -54,22 +54,91 @@
 
                 endif;
 
+                wp_reset_postdata();
+                
                 ?>
-                    <!-- Pager -->
-<!--                     <ul class="pager">
-                        <li class="next">
-                            <a href="<?php echo get_page_link(9); ?>">Other Posts &rarr;</a>
-                        </li>
-                    </ul> -->
+                    <div class="row singleBlogNav">
+                        <div class="col-lg-6">
+                            <!-- Post navigation -->
+                            <?php 
+
+                            // Get next post ADD TRUE TO PARAMETER TO GET RELATED CAT POST
+                            $nextPost = get_next_post();
+
+                            // Check to see if it is there is a post
+                            if (!empty($nextPost)) {
+                                // next post available
+                                // Get full post data
+                                $post = get_post($nextPost->ID);
+
+                                setup_postdata($post);
+                            ?>
+                            <div style="float: left;">
+                                <ul class="blogNavList pager">
+                                    <?php if (has_post_thumbnail($nextPost->ID)) : ?>
+                                    <li class="blogNavListImg">
+                                        <a href="<?php the_permalink(); ?>">
+                                            <?php the_post_thumbnail('nav-thumb'); ?>
+                                            <span class="blogNavTitle"><span><?php the_title(); ?></span></span>
+                                        </a>
+                                    </li>
+                                    <?php endif; ?>
+                                    <li class="blogNavListLinkBox next">
+                                        <a href="<?php the_permalink(); ?>">&larr; Next Post </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <?php
+
+                                // Reset post data
+                                wp_reset_postdata();
+                            }
+                            ?>
+                        </div>
+                        <div class="col-lg-6">
+                            <!-- Previous post -->
+                            <?php 
+                            $previousPost = get_previous_post();
+                            // Check to see if it is there is a post
+                            if (!empty($previousPost)) {
+                                // previous post available
+
+                                // Get full post data
+                                $post = get_post($previousPost->ID);
+
+                                setup_postdata($post);
+
+                            ?>
+                            <div style="float: right;">
+                                <ul class="blogNavList pager">
+                                    <?php if (has_post_thumbnail($previousPost->ID)) : ?>
+                                    <li class="blogNavListImg">
+                                        <a href="<?php the_permalink(); ?>">
+                                            <?php the_post_thumbnail('nav-thumb'); ?>
+                                            <span class="blogNavTitle"><span><?php the_title(); ?></span></span>
+                                        </a>
+                                    </li>
+                                    <?php endif; ?>
+                                    <li class="blogNavListLinkBox previous">
+                                        <a href="<?php the_permalink(); ?>">Previous Post &rarr;</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <?php    
+                                // Reset post data
+                                wp_reset_postdata();
+                            }
+                            ?>
+                        </div>
+                    </div>
                 </div>
-                        
-                 <!-- Side bar-->
+
                 <!-- Side bar-->
                 <div class="col-lg-3 col-md-3">
-                    <div class="sidebar" style=" word-wrap: break-word;border-left: 1px grey solid; padding-left: 10px; margin-top: 30px;">
+                    <div class="sidebar">
                         <!-- Shop -->
                         <h4>Shop: </h4>
-                        <a href="http://classicaltrax.bigcartel.com/">
+                        <a target="_blank" href="http://classicaltrax.bigcartel.com/">
                             <img class="sidebarElement" alt="ClassicalTrax-Bigcartel" src="<?php bloginfo('template_directory')?>/img/CT-shop.jpg">
                         </a>
                         <hr>
@@ -110,19 +179,25 @@
 
                                <a href=" <?php the_permalink(); ?> ">
                             
-                            <?php
+                            <!-- Check if has featured image, if not displays title, as to not leave it blank -->
+                            <?php if (has_post_thumbnail()) { ?>
 
-                                the_post_thumbnail('small-thumb');
+                                <?php the_post_thumbnail('small-thumb'); ?>
+                            
+                            <?php } else { ?>
 
-                                echo '</a>';
+                                <h5 class="sidebarBox"><?php the_title();?></h5>
 
-                                }
+                            <?php } ?>
+
+                            <?php 
+                            echo '</a>';
 
                             echo '<hr>';
                         
-                        }
-                        
-                        ?>
+                            }
+
+                        } ?>
                             
                         <h4 class="sidebarElement">Latest Mix:</h4>
                         <iframe width="100%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/223973703&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
@@ -170,7 +245,7 @@
 
                             <?php } else { ?>
 
-                                <h5 style="text-align: center;border: 1px grey solid;padding: 20px;"><?php the_title();?></h5>
+                                <h5 class="sidebarBox"><?php the_title();?></h5>
 
                             <?php } ?>
 
@@ -195,4 +270,4 @@
         </div>
         <hr>
     </article>
-<?php get_footer(); ?>
+<?php get_footer();
