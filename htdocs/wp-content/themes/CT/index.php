@@ -6,33 +6,13 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-1 col-md-8 col-md-offset-1">
                     <?php 
-
-                        $linksCategoryId         = get_cat_ID('Links');
                         
                         // Check if posts
                         if (have_posts()) :
                             // Posts available
-                            
-                            // Inistialise page number
-                            $pageNo = $paged;
-                            
-                            // Check if page number has been set
-                            if ($pageNo == '') { $pageNo = 1; }
-                            
-                            // Query the posts
-                            query_posts('showposts=5&paged='.$pageNo); 
-                        
                             // While have posts is true
                             while (have_posts()) : the_post(); 
-
-                                // Check if in links category
-                                if (in_category($linksCategoryId)) {
-                                    // Is in link category - skip
-                                    continue;
-
-                                }
                             ?>
-
                     
                         <div class="post-preview">  
                             <a href="<?php the_permalink(); ?>">

@@ -21,8 +21,6 @@
 
                     <?php 
 
-                        $categoryId = get_cat_ID('Links');
-
                         // Check if posts
                         if (have_posts()) :
                             // Posts available
@@ -30,12 +28,6 @@
                             // While have posts is true
                             while (have_posts()) : the_post(); 
 
-                            // Check if in links category
-                                if (in_category($categoryId)) {
-                                    // Is in link category - skip
-                                    continue;
-
-                                }
                     ?>
                     
                         <div class="post-preview">  
