@@ -5,14 +5,14 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-1 col-md-8 col-md-offset-1">
                     <?php 
-                        
+
                         // Check if posts
                         if (have_posts()) :
                             // Posts available
 
                             // While have posts is true
                             while (have_posts()) : the_post(); 
-
+                        
                     ?>
                     
                         <div class="post-preview">  
@@ -247,7 +247,7 @@
                             }
 
                         } ?>
-
+                        <?php getBlogRoll() ?>
                         <h4 class="sidebarElement">Feed:</h4>
                         <a class="twitter-timeline" href="https://twitter.com/classical_trax" data-widget-id="638798685892120576">Tweets by @classical_trax</a>
                         <hr>
